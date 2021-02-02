@@ -1,33 +1,25 @@
 import React from 'react';
-import {View,Text, Button} from 'react-native';
-
+import {View,Text,ScrollView} from 'react-native';
+import axios from 'axios';
+import AlbumDetail from './AlbumDetail'
 class AlbumList extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            name:'chirag',
-            title:'change',
-            changName:true
-        };
-        this.handleChange=this.handleChange.bind(this);
-    }
+
+state={albums:[]}
 
     componentDidMount(){
-        console.log("componentDidMount in AlbumsList  s"  );
+       axios.get('https://reqres.in/api/users?page=2') 
+       .then(response=> this.setState({albums:response.data.data}))
     }
 
-    handleChange(){
-        this.setState({name:'chirag kapadiya'});
-        this.setState({title:'changed...'})
-        this.setState({changName:false})
+    reanderAlbums(){
+    return this.state.albums.map(album =>  <AlbumDetail data={album}/>)
     }
 
 render(){
     return(
-       <View>
-           <Text>Albums.....! {this.state.name}</Text>
-           <Button title={this.state.changName===false? this.state.title : this.state.title } onPress={this.handleChange}/>
-       </View>
+       <ScrollView>
+           {this.reanderAlbums()}
+       </ScrollView>
     );
 }
 }

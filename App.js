@@ -14,10 +14,11 @@ import {
   View,
   Text,
   StatusBar,
+ 
 } from 'react-native';
 import AlbumList from './src/components/AlbumList';
+ import Header from './src/components/Header';
 
- import Header from './src/components/Header'
 
 const App =() =>  {
   return (
@@ -25,6 +26,7 @@ const App =() =>  {
     <SafeAreaView>
       <Header headertitel="Albums"/>
       <AlbumList />
+     
     </SafeAreaView>
     </>
   );
