@@ -13,9 +13,9 @@ export default CardSection
 
 const styles = StyleSheet.create({
     container:{
-        borderBottomWidth:10,
+        borderBottomWidth:1,
         padding:5,
-        backgroundColor:'red',
+        backgroundColor:'#fff',
         justifyContent:'flex-start',
         flexDirection:'row',
         borderColor:'#ddd',

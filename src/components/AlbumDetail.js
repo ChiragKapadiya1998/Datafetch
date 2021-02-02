@@ -20,7 +20,7 @@ return(
       </View>
     </CardSection>
     <CardSection>
-        <Image  style={{height:350,width:null,flex:1}} resizeMode={'contain'} source={{uri:avatar}}/>
+        <Image  style={{height:450,width:null,flex:1}} resizeMode={'contain'} source={{uri:avatar}}/>
     </CardSection>
     <CardSection>
         <Button onPress={()=>Linking.openURL('https://www.amazon.com')}>
